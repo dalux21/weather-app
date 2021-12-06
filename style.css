@@ -1,0 +1,106 @@
+    /*Insert Color Variables Here:*/
+    :root {
+        --beau-blue: #c1cad6ff;
+        --orange-soda: #f06543ff;
+        --key-lime: #ecfeaaff;
+        --charcoal: #454851ff;
+        --silver-metallic: #a4a9adff;
+    }
+
+    body{
+        margin:0;
+        font-family:Arial, Helvetica, sans-serif;
+    }
+
+    /*Flex Layout Basic Styles*/
+
+    .flex {display:flex;}
+    .flex-row{flex-flow:row;}
+    .flex-column{flex-flow:column wrap;}
+
+    #header{
+        display:grid;
+        grid-template-columns:1fr auto 1fr;
+        background-color:var(--charcoal);
+        height:2rem;
+        padding:1rem;
+        align-content:center;
+    }
+    #credits{
+        text-align:right;
+        justify-self:end;
+        align-self:center;
+    }
+    #credits a {
+        text-decoration:none;
+        color:var(--beau-blue);
+        transition:all ease-in-out 0.2s;
+    }
+    #credits a:hover{
+        color:var(--orange-soda);
+    }
+    #logo{
+        font-size:1.5rem;
+        color:var(--beau-blue);
+        font-weight:100;
+        justify-self:start;
+    }
+    #search-bar{
+        flex:2;
+        width:100%;
+        align-items:center;
+        color:var(--beau-blue);
+        padding-left:0.3rem;
+        height:2rem;
+    }
+    .searchbar-icons{
+        fill:var(--beau-blue);
+        transition: all 0.2s ease-in-out;
+    }
+
+    #searchbar-input{
+        margin-left:0.5rem;
+        height:2rem;
+        align-items:center;
+        border:1px solid var(--beau-blue);
+    }
+    #search-location-input{
+        height:100%;
+        margin-left:0.5rem;
+        background:none;
+        border:none;
+        border-right:none;
+        color:#EEE;
+        padding-left:0.7rem;
+
+}
+    #search-location-input:focus{
+        outline:none;
+    }
+
+    #search-icon{
+        margin-right:0.5rem;
+        cursor:pointer;
+        background:none;
+        border:none;
+    }
+    #search-icon:hover .searchbar-icons{
+        fill:var(--orange-soda);
+    }
+
+    /*Portrait Phone*/
+    @media (max-width: 575.98px) {
+
+    }
+
+    /* Small devices (landscape phones, less than 768px)*/
+    @media (max-width: 767.98px) {
+    }
+
+    /* Medium devices (tablets, less than 992px)*/
+    @media (max-width: 991.98px) {
+    }
+
+    /*Large devices (desktops, less than 1200px)*/
+    @media (max-width: 1199.98px) {
+    }
