@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="script.js"></script>
+    <title>Weather App</title>
+</head>
+
+<body>
+    <div id="container" class="flex flex-column">
+        <div id="header">
+            <div id="logo">WeatherApp</div>
+            <!--Search Bar-->
+            <div id="search-bar" class="flex flex-row">
+                <!--Location Icon SVG-->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path class="searchbar-icons" d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 
+            8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0
+             11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z" />
+                </svg>
+                <!--Input-->
+                <div id="searchbar-input" class="flex flex-row">
+                    <input type="text" name="search-location-input" id="search-location-input" class="flex"
+                        placeholder="Search Location..." />
+                    <!--Search Icon SVG-->
+                    <button id="search-icon" class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                            viewBox="0 0 24 24">
+                            <path class="searchbar-icons" d="M23.111 20.058l-4.977-4.977c.965-1.52 1.523-3.322 1.523-5.251 
+                    0-5.42-4.409-9.83-9.829-9.83-5.42 0-9.828 4.41-9.828 9.83s4.408 9.83 9.829 9.83c1.834 0 
+                    3.552-.505 5.022-1.383l5.021 5.021c2.144 2.141 5.384-1.096 3.239-3.24zm-20.064-10.228c0-3.739 
+                    3.043-6.782 6.782-6.782s6.782 3.042 6.782 6.782-3.043 6.782-6.782 
+                    6.782-6.782-3.043-6.782-6.782zm2.01-1.764c1.984-4.599 8.664-4.066 
+                    9.922.749-2.534-2.974-6.993-3.294-9.922-.749z" />
+                        </svg>
+                </div>
+                </button>
+                <!--Degree switch farenheit celsius toggle-->
+                <div id="degree-switch-toggle">
+                    <input type="radio" id="celsius" name="degree-switch" value="celsius" checked>
+                    <label for="celsius">°C</label>
+                    <input type="radio" id="farenheit" name="degree-switch" value="farenheit">
+                    <label for="farenheit">°F</label>
+                </div>
+
+            </div>
+            <div id="credits">
+                <a href="https://dalux2190.github.com">GitHub</a>
+            </div>
+        </div>
+        <!-- HEADER ENDS -->
+        <!--Start Content-->
+        <div id="content" class="flex flex-column">
+            <!--Top half of the app, showing general weather info-->
+            <div id="top-weather" class="flex flex-row">    
+                <!--The Current Weather Card-->
+                <div id="current-weather-card" class="weather-card flex flex-row">
+                    <!--The Icon-->
+                    <div id="today-weather-icon" class="weather-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>Rainy</title>
+                        <path d="M114.61 162.85A16.07 16.07 0 00128 149.6C140.09 76.17 193.63 32 256 32c57.93 0 96.62 37.75 
+                        112.2 77.74a15.84 15.84 0 0012.2 9.87c50 8.15 91.6 41.54 91.6 99.59 0 
+                        59.4-48.6 100.8-108 100.8H130c-49.5 0-90-24.7-90-79.2 0-48.47 38.67-72.22 74.61-77.95z" 
+                        fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"/><path fill="none" 
+                        stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width=  "32" 
+                        d="M144 384l-32 48M224 384l-64 96M304 384l-32 48M384 384l-64 96"/></svg></div>
+                        <!--Left side of the current weather card-->
+                        <div id="current-weather-more-info" class="flex flex-column">
+
+                    <div id="current-location">London</div>
+                    <div id="today-temperature" class="temperature">19°</div>
+                    <div id="today-high-and-low" class="high-and-low flex flex-row">
+                        <div id="today-high">H: 21</div>
+                        <div id="today-low">L: 14</div>
+                    </div>
+
+                </div>
+            </div>
+            <!--Tomorrow Weather Card-->
+            <div id="tomorrow-weather-card" class="weather-card flex flex-row">
+                <div id="tomorrow-weather-icon" class="weather-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>Rainy</title>
+                    <path d="M114.61 162.85A16.07 16.07 0 00128 149.6C140.09 76.17 193.63 32 256 32c57.93 0 96.62 37.75 
+                    112.2 77.74a15.84 15.84 0 0012.2 9.87c50 8.15 91.6 41.54 91.6 99.59 0 
+                    59.4-48.6 100.8-108 100.8H130c-49.5 0-90-24.7-90-79.2 0-48.47 38.67-72.22 74.61-77.95z" 
+                    fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"/><path fill="none" 
+                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width=  "32" 
+                    d="M144 384l-32 48M224 384l-64 96M304 384l-32 48M384 384l-64 96"/></svg></div>
+                    <div id="tomorrow-weather-more-info" class="flex flex-column">
+                        <div id="day-tomorrow" class="day-info">Tomorrow</div>
+                    <div id="tomorrow-temperature" class="temperature">19°</div>
+                    <div id="tomorrow-high-and-low" class="high-and-low flex flex-row">
+                        <div id="tomorrow-high">H: 21</div>
+                        <div id="tomorrow-low">L: 14</div>
+                    </div>
+
+
+                    </div>
+            </div>
+            <!-- +2 days Weather Card-->
+            <div id="day-after-tomorrow-weather-card" class="weather-card flex flex-row">
+                <div id="day-after-tomorrow-weather-icon" class="weather-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>Rainy</title>
+                    <path d="M114.61 162.85A16.07 16.07 0 00128 149.6C140.09 76.17 193.63 32 256 32c57.93 0 96.62 37.75 
+                    112.2 77.74a15.84 15.84 0 0012.2 9.87c50 8.15 91.6 41.54 91.6 99.59 0 
+                    59.4-48.6 100.8-108 100.8H130c-49.5 0-90-24.7-90-79.2 0-48.47 38.67-72.22 74.61-77.95z" 
+                    fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"/><path fill="none" 
+                    stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width=  "32" 
+                    d="M144 384l-32 48M224 384l-64 96M304 384l-32 48M384 384l-64 96"/></svg></div>
+                    <div id="day-after-tomorrow-weather-more-info" class="flex flex-column">
+                        <div id="day-tomorrow" class="day-info">Wednesday</div>
+                    <div id="day-after-tomorrow-temperature" class="temperature">19°</div>
+                    <div id="day-after-tomorrow-high-and-low" class="high-and-low flex flex-row">
+                        <div id="day-after-tomorrow-high">H: 21</div>
+                        <div id="day-after-tomorrow-low">L: 14</div>
+                    </div>
+
+
+                    </div>
+            </div>
+             </div>
+
+            <!--Details Bar-->
+            <div id="details-bar">
+                
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
