@@ -123,8 +123,13 @@
 
 
     /* Top Half with big Cards */
-    #top-weather{
 
+    #content{
+        flex-flow:column nowrap;
+        justify-content:center;
+
+    }
+    #top-weather{
         margin:2rem;
         flex-wrap:wrap;
         justify-content:space-evenly;
@@ -155,7 +160,6 @@
     }
     .weather-icon{
         max-width:10rem;
-        min-width:100px;
     }
     .temperature{
         font-size:5rem;
@@ -164,9 +168,21 @@
         margin:0 0.5rem 0 0;
     }
     #details-bar{
-        background-color:var(-- );
-        height:6rem;
-        width:100%;
+        background-color:var(--charcoal );
+        height:10vh;
+        justify-content:center;
+        align-items:center;
+        flex-wrap:wrap;
+    }
+    .detail-element{
+        margin:0 2rem;
+        color:var(--beau-blue);
+        font-weight:800;
+        font-size:1rem;
+    }
+    .detail-value{
+        font-weight:400;
+        color:var(--key-lime);
     }
     /*Portrait Phone*/
     @media (max-width: 575.98px) {
