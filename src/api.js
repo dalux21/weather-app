@@ -1,8 +1,8 @@
 import userInterface from './ui';
 
-function getWeatherData() {
+function getWeatherData(location) {
     
-const location = userInterface.DOMElements.locationInput.value
+
 const apiKey = '20f7632ffc2c022654e4093c6947b4f4'
 fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}`,
 

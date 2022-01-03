@@ -14,6 +14,7 @@
         <div id="header">
             <div id="logo">WeatherApp</div>
             <!--Search Bar-->
+            <form>
             <div id="search-bar" class="flex flex-row">
                 <!--Location Icon SVG-->
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -26,7 +27,7 @@
                     <input type="text" name="search-location-input" id="search-location-input" class="flex"
                         placeholder="Search Location..." />
                     <!--Search Icon SVG-->
-                    <button id="search-icon" class="flex"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                    <button id="search-icon" class="flex" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
                             viewBox="0 0 24 24">
                             <path class="searchbar-icons" d="M23.111 20.058l-4.977-4.977c.965-1.52 1.523-3.322 1.523-5.251 
                     0-5.42-4.409-9.83-9.829-9.83-5.42 0-9.828 4.41-9.828 9.83s4.408 9.83 9.829 9.83c1.834 0 
@@ -37,6 +38,7 @@
                         </svg>
                 </div>
                 </button>
+            </form>
                 <!--Degree switch farenheit celsius toggle-->
                 <div id="degree-switch-toggle">
                     <input type="radio" id="celsius" name="degree-switch" value="celsius" checked>
