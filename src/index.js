@@ -15,3 +15,10 @@ userInterface.DOMElements.searchBtn.addEventListener('click', function(e){
     getWeatherData(location)
 })
 
+userInterface.DOMElements.celsiusSwitch.addEventListener('click', function(e){
+    getWeatherData(userInterface.DOMElements.weatherNowLocation.innerText)
+})
+userInterface.DOMElements.farenheitSwitch.addEventListener('click', function(){
+    getWeatherData(userInterface.DOMElements.weatherNowLocation.innerText)
+})
+

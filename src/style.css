@@ -196,18 +196,64 @@
         display:none;
     }
     /*Portrait Phone*/
+
+    
+    /*Portrait Phone*/
     @media (max-width: 575.98px) {
-
+        
+        #content{
+            flex-flow:column;
+            align-items:center;
+            justify-content:center;
+        }
+    #header{
+        display:flex;
+        flex-flow:column;
+        height:auto;
     }
-
+    #logo{
+        display:none;
+    }
+    #credits{
+        display:none;
+    }
+    #header > * {
+        margin:1rem 0;
+    }
+    #top-weather{
+        margin:0;
+        padding:0;
+        align-items:flex-start;
+        justify-content:flex-start;
+    }
+    .weather-card{
+        margin:0.4rem;
+        flex-flow:row;
+        padding:1rem 0;
+        height:auto;
+        max-width:100vw;
+    } 
+    #details-bar{
+        height:auto;
+        flex-flow:column;
+        width:100vw;
+    }
+    #details-bar > *{
+        padding:1rem 0;
+        border-bottom:1px solid var(--silver-metallic);
+        width:100%;
+        text-align:center;
+    }
+    }
+    
     /* Small devices (landscape phones, less than 768px)*/
     @media (max-width: 767.98px) {
     }
-
+    
     /* Medium devices (tablets, less than 992px)*/
     @media (max-width: 991.98px) {
     }
-
+    
     /*Large devices (desktops, less than 1200px)*/
     @media (max-width: 1199.98px) {
     }
