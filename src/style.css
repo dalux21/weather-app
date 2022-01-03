@@ -27,8 +27,8 @@
         height:2rem;
         padding:1rem;
         align-content:center;
-        box-shadow:0px 2px 4px rgba(0,0,0,0.3),
-                    0px 4px 8px rgba(0,0,0,0.3);
+        box-shadow:2px 2px 4px rgba(0,0,0,0.3),
+                    0px 4px 8px rgba(0,0,0,0.2);
     }
     #credits{
         text-align:right;
@@ -140,8 +140,8 @@
 
     .weather-card{
         border-radius:10px;
-        background-color:var(--orange-soda);
-        color:white;
+        
+        color:var(--orange-soda);
         padding:4rem;
         align-items:center;
         box-shadow:2px 2px 2px rgba(0,0,0,0.3),
@@ -183,6 +183,9 @@
     .detail-value{
         font-weight:400;
         color:var(--key-lime);
+    }
+    #tomorrow-weather-card, #day-after-tomorrow-weather-card{
+        display:none;
     }
     /*Portrait Phone*/
     @media (max-width: 575.98px) {
