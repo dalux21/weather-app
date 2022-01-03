@@ -12,30 +12,29 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${api
     return response.json()
 })
 .then (function(response){
-    const wind = response.wind.speed + ' ' + response.wind.deg + ' deg ' + response.wind.gust + ' gust'
+    const wind = response.wind.speed + ' m/s | ' +  response.wind.gust + ' gust'
     const description = response.weather[0].description
     const icon = response.weather[0].icon
-    const id = response.weather[0].id
     const iconUrl = `http://openweathermap.org/img/wn/${icon}@4x.png`
     userInterface.DOMElements.weatherNowLocation.innerText = response.name
-    userInterface.DOMElements.todayTemperature.innerText = response.main.temp
-    userInterface.DOMElements.humidity.innerText = response.main.humidity
-    userInterface.DOMElements.feels_like.innerText = response.main.feels_like
-    userInterface.DOMElements.visibility.innerText = response.visibility
+    const temperature = response.main.temp
+    userInterface.DOMElements.humidity.innerText = response.main.humidity + '%'
+    userInterface.DOMElements.feels_like.innerText = userInterface.convertKelvin(response.main.feels_like) + '°'
+    userInterface.DOMElements.visibility.innerText = response.visibility + ' m'
     userInterface.DOMElements.wind.innerText = wind
     userInterface.DOMElements.todayWeatherIcon.innerHTML = `<img src="${iconUrl}" alt="${description}"></img>`
     userInterface.DOMElements.todayDescription.innerText = description
-
-
-
-
+    userInterface.DOMElements.todayTemperature.innerText = userInterface.convertKelvin(temperature) + '°'
     
 })
+
 
 .catch(function(err){
-    console.log('there was a problem with the request' + err)
+    console.log('Oopsie! ' + err)
+    userInterface.DOMElements.weatherNowLocation.innerText = 'Location not found, try again!'
     
 })
+
 
 };
 
